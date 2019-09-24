@@ -1,0 +1,26 @@
+{
+  "name": "elasticsearch_busqueda_v2",
+  "version": "1.0.0",
+  "description": "Proyecto para determinar la manera en como se busca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PORTAFOLIO-PROYECTOS/ELASTICSEARCH_BUSQUEDA_V2.git"
+  },
+  "author": "Hugo Roca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PORTAFOLIO-PROYECTOS/ELASTICSEARCH_BUSQUEDA_V2/issues"
+  },
+  "homepage": "https://github.com/PORTAFOLIO-PROYECTOS/ELASTICSEARCH_BUSQUEDA_V2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "elasticsearch": "^16.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2"
+  }
+}
