@@ -1,6 +1,7 @@
 'use strict';
 
 const elastic = require('elasticsearch');
+const queryElastic = require('../utils/queryElasticsearch');
 const config = require('../../config');
 
 module.exports = class Elasticsearch {
@@ -18,5 +19,17 @@ module.exports = class Elasticsearch {
             type: config.elastic.type,
             body: body
         });
+    }
+
+    test(){
+        let multi_match = queryElastic.query('buscando',true,false,false,false,false,false,false,true,true,true,false);
+        let query = {
+            bool:{
+                must:{
+                    multi_match
+                }
+            }
+        }
+        return query;
     }
 }
