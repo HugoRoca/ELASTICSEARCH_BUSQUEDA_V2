@@ -21,15 +21,18 @@ module.exports = class Elasticsearch {
         });
     }
 
-    test(){
-        let multi_match = queryElastic.query('buscando',true,false,false,false,false,false,false,true,true,true,false);
+    test() {
+        let multi_match = queryElastic.query('buscando', true, false, false, false, false, false, false, true, true, true, false);
         let query = {
-            bool:{
-                must:{
+            bool: {
+                must: {
                     multi_match
                 }
             }
         }
-        return query;
+        return {
+            query,
+            size: 40
+        };
     }
 }

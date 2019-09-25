@@ -7,6 +7,7 @@ const app = express();
 const elasticRouter = require('./app/routes/elastic');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/elastic', elasticRouter);
 app.use(express.static(`${__dirname}/public`));
 
