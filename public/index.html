@@ -17,65 +17,80 @@
         <form>
             <div class="form-row mt-4">
                 <div class="col-12">
-                    <input id="txtTextoBusqueda" class="form-control form-control-lg text-center" type="text" placeholder="Texto de busqueda"
-                        autofocus autocomplete="off">
+                    <input id="txtTextoBusqueda" class="form-control form-control-lg text-center" type="text"
+                        placeholder="Texto de busqueda" autofocus autocomplete="off">
                 </div>
             </div>
-            <div class="form-row mt-4">
-                <div class="col-2"><label><b>Campos:</b></label></div>
-                <div class="col-2">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkTextoBusqueda" checked>
-                        <label class="custom-control-label" for="chkTextoBusqueda">Texto busqueda</label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="ccustom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkMarcas">
-                        <label class="custom-control-label" for="chkMarcas">Marcas</label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="ccustom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkCategorias">
-                        <label class="custom-control-label" for="chkCategorias">Categorías</label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="ccustom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkLineas">
-                        <label class="custom-control-label" for="chkLineas">Lineas</label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="ccustom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkGrupoArticulo">
-                        <label class="custom-control-label" for="chkGrupoArticulo">Grupo Articulo</label>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Campos</h5>
+                    <div class="form-row mt-4">
+                        <div class="col-2">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkTextoBusqueda" checked>
+                                <label class="custom-control-label" for="chkTextoBusqueda">Texto busqueda</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="ccustom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkMarcas">
+                                <label class="custom-control-label" for="chkMarcas">Marcas</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="ccustom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkCategorias">
+                                <label class="custom-control-label" for="chkCategorias">Categorías</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="ccustom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkLineas">
+                                <label class="custom-control-label" for="chkLineas">Lineas</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="ccustom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkGrupoArticulo">
+                                <label class="custom-control-label" for="chkGrupoArticulo">Grupo Articulo</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="ccustom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkSeccion">
+                                <label class="custom-control-label" for="chkSeccion">Sección</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="form-row mt-4">
-                <div class="col-2"><label><b>Analizadores:</b></label></div>
-                <div class="col-2">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkNgram" checked>
-                        <label class="custom-control-label" for="chkNgram">NGRAM</label>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Analizadores</h5>
+                    <div class="form-row mt-4">
+                        <div class="col-2">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkNgram" checked>
+                                <label class="custom-control-label" for="chkNgram">NGRAM</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkPhonetic" checked>
+                                <label class="custom-control-label" for="chkPhonetic">PHONETIC</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="chkSinonimos" checked>
+                                <label class="custom-control-label" for="chkSinonimos">SINÓNIMOS</label>
+                            </div>
+                        </div>
+                        <div class="col-4">(Si todo esta desactivado, concidera el default)</div>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkPhonetic" checked>
-                        <label class="custom-control-label" for="chkPhonetic">PHONETIC</label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="chkSinonimos" checked>
-                        <label class="custom-control-label" for="chkSinonimos">SINÓNIMOS</label>
-                    </div>
-                </div>
-                <div class="col-4">(Si todo esta desactivado, concidera el default)</div>
             </div>
+
             <div class="form-row mt-4">
                 <div class="col-2"><label><b>Operador:</b></label></div>
                 <div class="col-2">
@@ -104,37 +119,10 @@
                         <th scope="col">Categorías</th>
                         <th scope="col">Lineas</th>
                         <th scope="col">Grupo Articulos</th>
+                        <th scope="col">Sección</th>
                     </tr>
                 </thead>
-                <tbody id="tblLista">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
+                <tbody id="tblLista"></tbody>
             </table>
         </div>
     </div>
@@ -142,10 +130,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="./index.js"></script>
 </body>
 

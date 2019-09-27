@@ -3,8 +3,9 @@
 const elasticClass = require('../server/elasticsearch');
 
 exports.obtener = async function (req, res, next) {
-    console.log(req.body);
+
     let elastic = new elasticClass();
-    let query = elastic.test();
+    let query = await elastic.ejecutar(req.body);
+
     res.json(query);
 };

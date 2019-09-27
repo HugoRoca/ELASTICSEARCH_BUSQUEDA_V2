@@ -8,6 +8,7 @@ const elastic = (() => {
         chkCategorias: $('#chkCategorias'),
         chkLineas: $('#chkLineas'),
         chkGrupoArticulo: $('#chkGrupoArticulo'),
+        chkSeccion: $('#chkSeccion'),
         chkNgram: $('#chkNgram'),
         chkPhonetic: $('#chkPhonetic'),
         chkSinonimos: $('#chkSinonimos'),
@@ -19,10 +20,24 @@ const elastic = (() => {
 
     const _util = {
         pintar: (data) => {
-            for (let i = 0; i < data.length; i++) {
-                const element = data[i];
+            let tabla = '';
 
+            for (let i = 0; i < data.length; i++) {
+                const score = data[i]._score;
+                const element = data[i]._source;
+                tabla += '<tr>';
+                tabla += `<th scope="row">${i + 1}</th>`;
+                tabla += `<td>${score}</td>`;
+                tabla += `<td>${element.textoBusqueda}</td>`;
+                tabla += `<td>${JSON.stringify(element.marcas)}</td>`;
+                tabla += `<td>${JSON.stringify(element.categorias)}</td>`;
+                tabla += `<td>${JSON.stringify(element.lineas)}</td>`;
+                tabla += `<td>${JSON.stringify(element.grupoArticulos)}</td>`;
+                tabla += `<td>${element.seccion1}</td>`;
+                tabla += '</tr>';
             }
+
+            _element.tblLista.html(tabla);
         }
     }
 
@@ -35,7 +50,8 @@ const elastic = (() => {
                     marca: _element.chkMarcas.is(':checked'),
                     categoria: _element.chkCategorias.is(':checked'),
                     linea: _element.chkLineas.is(':checked'),
-                    grupoArticulo: _element.chkGrupoArticulo.is(':checked')
+                    grupoArticulo: _element.chkGrupoArticulo.is(':checked'),
+                    seccion: _element.chkSeccion.is(':checked')
                 },
                 analizador: {
                     ngram: _element.chkNgram.is(':checked'),
@@ -63,7 +79,8 @@ const elastic = (() => {
         buscar: () => {
             _element.btnBuscar.click(() => {
                 let success = (r) => {
-                    console.log('dataaaaa', r);
+                    console.log('dataaaaa', r.hits.hits);
+                    _util.pintar(r.hits.hits);
                 }
 
                 let data = _model.elastic();
