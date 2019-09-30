@@ -19,6 +19,19 @@ const elastic = (() => {
     }
 
     const _util = {
+        defecto: (val) => {
+            _element.txtTextoBusqueda.focus();
+            _element.chkTextoBusqueda.prop('checked', val);
+            _element.chkMarcas.prop('checked', val);
+            _element.chkCategorias.prop('checked', val);
+            _element.chkLineas.prop('checked', val);
+            _element.chkGrupoArticulo.prop('checked', val);
+            _element.chkSeccion.prop('checked', val);
+            _element.chkSeccion.prop('checked', val);
+            _element.chkNgram.prop('checked', val);
+            _element.chkPhonetic.prop('checked', val);
+            _element.chkSinonimos.prop('checked', val);
+        },
         pintar: (data) => {
             let tabla = '';
 
@@ -77,11 +90,18 @@ const elastic = (() => {
 
     const _evento = {
         buscar: () => {
-            _element.btnBuscar.click(() => {
+            _element.btnBuscar.click((e) => {
+                e.preventDefault();
+
                 cargando(true);
                 let success = (r) => {
                     _util.pintar(r.hits.hits);
                     cargando(false);
+
+                    $('html, body').animate({
+                        scrollTop: $("#scrollTable").offset().top
+                    }, 800);
+
                 }
 
                 let data = _model.elastic();
@@ -91,12 +111,19 @@ const elastic = (() => {
                     console.log('error', e);
                 })
             });
+        },
+        limpiar: () => {
+            _element.btnLimpiar.click(() => {
+                _util.defecto(false);
+                _util.pintar([]);
+            });
         }
     }
 
     const init = (() => {
-        console.log('funcionando');
         _evento.buscar();
+        _evento.limpiar();
+        _util.defecto(true);
     });
 
     return {
