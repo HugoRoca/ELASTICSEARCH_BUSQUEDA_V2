@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./loader.css">
+
     <title>Buscador</title>
 </head>
 
 <body>
+    <div class="cargaPantalla">
+        <div id="loader"></div>
+    </div>
     <div class="container">
         <h1 class="text-center display-4">TEST DE BUSQUEDA</h1>
         <form>
@@ -135,6 +140,18 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
     <script src="./index.js"></script>
+
+    <script>
+        function cargando(val) {
+            if (val) {
+                $(".cargaPantalla").fadeIn(500);
+            } else {
+                $(".cargaPantalla").fadeOut(500);
+            }
+        }
+
+        cargando(false);
+    </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ const config = {
     },
     elastic: {
         host: 'https://vpc-es-sbsearch2-prd-zy7ytdwgfleiwpive3meis5lzy.us-east-1.es.amazonaws.com',
-        index: 'producto_v2_co_201914',
+        index: 'producto_v2_co_201916',
         type: '_doc'
     }
 }

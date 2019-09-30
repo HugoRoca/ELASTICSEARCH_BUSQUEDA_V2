@@ -32,21 +32,34 @@ module.exports = class Elasticsearch {
 
         let query = {
             bool: {
-                must: {
-                    multi_match
-                }
+                must: [
+                    {
+                        multi_match
+                    },
+                    {
+                        terms: {
+                            "codigoConsultora": [
+                                "9906161462",
+                                "YYYYYYYYY",
+                                "000000000"
+                            ]
+                        }
+                    }
+                ]
             }
         }
 
-        console.log(JSON.stringify(query));
+        let bodyPost = {
+            query,
+            size: 40
+        }
+
+        console.log(JSON.stringify(bodyPost));
 
         return await this.client.search({
             index: config.elastic.index,
             type: config.elastic.type,
-            body: {
-                query,
-                size: 40
-            }
+            body: bodyPost
         });
     }
 

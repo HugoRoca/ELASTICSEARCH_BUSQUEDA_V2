@@ -78,14 +78,16 @@ const elastic = (() => {
     const _evento = {
         buscar: () => {
             _element.btnBuscar.click(() => {
+                cargando(true);
                 let success = (r) => {
-                    console.log('dataaaaa', r.hits.hits);
                     _util.pintar(r.hits.hits);
+                    cargando(false);
                 }
 
                 let data = _model.elastic();
 
                 _service.elastic(data).then(success, (e) => {
+                    cargando(false);
                     console.log('error', e);
                 })
             });
