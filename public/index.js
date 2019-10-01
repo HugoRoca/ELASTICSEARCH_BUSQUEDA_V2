@@ -97,10 +97,11 @@ const elastic = (() => {
                 let success = (r) => {
                     _util.pintar(r.hits.hits);
                     cargando(false);
-
-                    $('html, body').animate({
-                        scrollTop: $("#scrollTable").offset().top
-                    }, 800);
+                    if (r.hits.total) {
+                        $('html, body').animate({
+                            scrollTop: $("#scrollTable").offset().top
+                        }, 800);
+                    }
 
                 }
 
